@@ -22,7 +22,7 @@ class ArtistRepositoryImpl : ArtistRepository {
             row[ArtistTable.genre] = genre
             row[ArtistTable.createdAt] = now
             row[ArtistTable.updatedAt] = now
-        }[ArtistTable.id]          // ← aquí obtenemos el UUID directamente
+        }[ArtistTable.id]
 
         Artist(insertedId, name, genre)
     }
@@ -73,7 +73,7 @@ class ArtistRepositoryImpl : ArtistRepository {
             }
 
         val tracks = TrackTable
-            .innerJoin(AlbumTable, { albumId }, { AlbumTable.id })   // ← ojo: AlbumTable.id
+            .innerJoin(AlbumTable, { albumId }, { AlbumTable.id })
             .select { AlbumTable.artistId eq id }
             .map { row ->
                 Track(

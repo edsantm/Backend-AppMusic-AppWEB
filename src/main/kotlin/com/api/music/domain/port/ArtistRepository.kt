@@ -11,7 +11,6 @@ interface ArtistRepository {
     suspend fun findById(id: UUID): Artist?
     suspend fun delete(id: UUID): Boolean
 
-    // Para GET artista con relaciones
     suspend fun findByIdWithRelations(id: UUID): ArtistWithRelations?
 
     data class ArtistWithRelations(

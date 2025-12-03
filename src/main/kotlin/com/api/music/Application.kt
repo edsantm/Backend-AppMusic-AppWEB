@@ -33,7 +33,6 @@ fun Application.module() {
     // DB
     DatabaseFactory.init()
 
-    // Inyección “manual” (hexagonal simple)
     val artistRepository: ArtistRepository = ArtistRepositoryImpl()
     val albumRepository: AlbumRepository = AlbumRepositoryImpl()
     val trackRepository: TrackRepository = TrackRepositoryImpl()

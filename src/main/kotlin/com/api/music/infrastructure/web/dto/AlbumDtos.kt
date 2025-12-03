@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 data class CreateAlbumRequest(
     val title: String,
     val releaseYear: Int,
-    val artistId: String   // viene como texto en JSON
+    val artistId: String
 )
 
 @Serializable
